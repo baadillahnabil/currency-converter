@@ -22,12 +22,15 @@ const styles = {
   unitRate: {
     fontSize: 12,
     fontStyle: 'italic',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: 5
   },
 
   buttonDelete: {
     minWidth: 30,
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    padding: 12,
+    borderRadius: 0
   }
 }
 

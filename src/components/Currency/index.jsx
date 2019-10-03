@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/styles'
 import accounting from 'accounting-js'
 
-import { Grid, Paper, Typography, Button } from '@material-ui/core'
+import { Grid, Paper, Typography, IconButton } from '@material-ui/core'
+import { Close as DeleteIcon } from '@material-ui/icons'
 
 import styles from './styles'
 
@@ -46,8 +47,9 @@ const Currency = ({
           </Grid>
 
           {/* Delete Button */}
-          <Button
-            variant="text"
+          <IconButton
+            color="secondary"
+            size="small"
             className={classes.buttonDelete}
             onClick={() => {
               const selected = { ...selectedRates }
@@ -55,8 +57,8 @@ const Currency = ({
               setSelectedRates(selected)
             }}
           >
-            x
-          </Button>
+            <DeleteIcon />
+          </IconButton>
         </Grid>
       </Paper>
     ))}
