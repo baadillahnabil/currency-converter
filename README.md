@@ -1,3 +1,47 @@
+# with Yarn/NPM Setup:
+
+### Install all the dependencies:
+
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development:
+
+```
+yarn dev
+```
+
+### Compiles and minifies for production:
+
+```
+yarn build
+```
+
+### Run unit tests:
+
+```
+yarn test
+```
+
+# with Docker Setup:
+
+_**IMPORTANT:** make sure you have docker engine installed on your machine_
+
+### Build the image container:
+
+```
+docker-compose up -d --build
+```
+
+### Then run locally:
+
+```
+docker-compose up
+```
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
