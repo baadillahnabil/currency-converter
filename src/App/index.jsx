@@ -44,9 +44,9 @@ const App = ({ classes }) => {
   return (
     <Grid
       container
-      justify='center'
-      alignItems='center'
-      direction='column'
+      justify="center"
+      alignItems="center"
+      direction="column"
       className={classes.root}
     >
       {/* The Input Field */}
@@ -54,16 +54,18 @@ const App = ({ classes }) => {
         <FormControl fullWidth className={classes.inputArea}>
           <InputLabel>USD - United States Dollar</InputLabel>
           <Input
-            type='number'
+            type="number"
             value={inputAmount}
             onChange={event => setInputAmount(event.target.value)}
-            startAdornment={<InputAdornment position='start'>USD</InputAdornment>}
+            startAdornment={
+              <InputAdornment position="start">USD</InputAdornment>
+            }
             classes={{ input: classes.inputField }}
           />
         </FormControl>
       </Paper>
 
-      <Typography component='p' className={classes.separator}>
+      <Typography component="p" className={classes.separator}>
         - to -
       </Typography>
 
@@ -71,14 +73,17 @@ const App = ({ classes }) => {
         {/* Single Currency Card */}
         {Object.keys(selectedRates).map(key => (
           <Paper key={key} elevation={1} className={classes.currencyCard}>
-            <Grid container wrap='nowrap'>
+            <Grid container wrap="nowrap">
               {/* Conversion Detail */}
               <Grid className={classes.detailSide}>
-                <Grid container justify='space-between' alignItems='baseline'>
-                  <Typography component='p' className={classes.cardCurrencyCode}>
+                <Grid container justify="space-between" alignItems="baseline">
+                  <Typography
+                    component="p"
+                    className={classes.cardCurrencyCode}
+                  >
                     {key}
                   </Typography>
-                  <Typography component='p' className={classes.cardAmount}>
+                  <Typography component="p" className={classes.cardAmount}>
                     {accounting.formatMoney(rates[key] * inputAmount, {
                       symbol: key,
                       format: '%s  %v',
@@ -89,7 +94,7 @@ const App = ({ classes }) => {
                 {/* <Typography component='p' className={classes.currencyDesc}>
                   IDR - Indonesian Rupiah // Sorry, this data ngga ada di API nya :( padahal udah dibikin
                 </Typography> */}
-                <Typography component='p' className={classes.unitRate}>
+                <Typography component="p" className={classes.unitRate}>
                   1 USD ={' '}
                   {accounting.formatMoney(rates[key], {
                     symbol: key,
@@ -101,7 +106,7 @@ const App = ({ classes }) => {
 
               {/* Delete Button */}
               <Button
-                variant='text'
+                variant="text"
                 className={classes.buttonDelete}
                 onClick={() => {
                   const selected = { ...selectedRates }
@@ -116,17 +121,17 @@ const App = ({ classes }) => {
         ))}
 
         {/* Add Currency Button */}
-        <FormControl fullWidth variant='outlined' className={classes.addNewBox}>
+        <FormControl fullWidth variant="outlined" className={classes.addNewBox}>
           <Select
             displayEmpty
-            value=''
+            value=""
             onChange={event => {
               const selected = { ...selectedRates }
               selected[event.target.value] = rates[event.target.value]
               setSelectedRates(selected)
             }}
           >
-            <MenuItem value=''>Add New Currency</MenuItem>
+            <MenuItem value="">Add New Currency</MenuItem>
             {Object.keys(rates).map(key => (
               <MenuItem key={key} value={key}>
                 {key}
