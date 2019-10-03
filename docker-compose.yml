@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  currency-converter:
+    container_name: currency-converter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/currency-converter'
+      - '/usr/src/currency-converter/node_modules'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
