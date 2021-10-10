@@ -27,10 +27,9 @@ const App = ({ classes }) => {
   useEffect(() => {
     const fetchRates = async () => {
       try {
-        const { data } = await API.get('v1/latest', {
+        const { data } = await API.get('/latest', {
           params: {
-            access_key: 'aec8de463761bffb12ba0107139de764'
-            // base: 'USD'
+            base: 'USD'
           }
         })
         setRates(data.rates)
