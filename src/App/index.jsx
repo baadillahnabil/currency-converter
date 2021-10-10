@@ -29,8 +29,8 @@ const App = ({ classes }) => {
       try {
         const { data } = await API.get('v1/latest', {
           params: {
-            access_key: 'aec8de463761bffb12ba0107139de764'
-            // base: 'USD'
+            access_key: 'aec8de463761bffb12ba0107139de764',
+            base: 'USD'
           }
         })
         setRates(data.rates)
