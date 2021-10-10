@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const API = axios.create({
-  baseURL: 'https://api.exchangeratesapi.io'
+  baseURL: 'http://api.exchangeratesapi.io/'
 })
 
 export default API
